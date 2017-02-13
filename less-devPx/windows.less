@@ -1,0 +1,169 @@
+@import (once) "vars";
+@import (once) "typography";
+@import (once) "utils";
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255, .5);
+    z-index: @zindexModal - 1;
+
+	&.transparent {
+		background-color: rgba(255,255,255, 0);
+	}
+}
+
+.window {
+	display: block;
+	position: relative;
+	height: auto;
+	width: 100%;
+	background-color: @winFlatBackgroundColor;
+
+	.block-shadow;
+}
+
+.window-caption {
+	position: relative;
+	background-color: @winFlatBackgroundColor;
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px @winFlatBorderColor solid;
+	border-top: 0;
+	cursor: default;
+
+	.window-caption-title {
+		font-size: 14px;
+		.text-bold;
+	}
+
+	.window-caption-icon {
+		margin-left: 5px;
+		* {
+			height: 16px;
+			width: 16px;
+		}
+	}
+
+	.window-caption-icon ~ .window-caption-title {
+		padding-left: 5px;
+	}
+
+	.btn-close, .btn-min, .btn-max {
+		position: absolute;
+		height: 24px;
+		width: 24px;
+		min-height: 24px;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 16px;
+		font-weight: normal;
+		padding: 0 0 10px 0;
+		z-index: 3;
+		outline: none;
+		cursor: pointer;
+        display: block;
+
+		background-color: @winFlatBackgroundColor;
+		color: @winFlatSystemButtonRestColor;
+		top: 4px;
+		right: 4px;
+		&:hover {
+			background-color: @winFlatSystemButtonHoverBackground;
+			color: @winFlatSystemButtonActiveColor;
+		}
+		&:active {
+			background-color: @winFlatSystemButtonActiveBackground;
+			color: @white;
+		}
+	}
+
+	.btn-max {
+		right: 29px;
+	}
+	.btn-min {
+		right: 54px;
+	}
+
+	.btn-min {
+		&:after {
+			position: absolute;
+			display: block;
+			width: 10px;
+			height: 10px;
+			border-bottom: 2px solid @winFlatSystemButtonRestColor;
+			content: '';
+			bottom: 6px;
+			left: 50%;
+			margin-left: -5px;
+		}
+	}
+
+	.btn-max {
+		&:after {
+			position: absolute;
+			display: block;
+			width: 10px;
+			height: 6px;
+			border: 1px @winFlatSystemButtonRestColor solid;
+			border-top-width: 2px;
+			content: '';
+			bottom: 6px;
+			left: 50%;
+			margin-left: -6px;
+		}
+	}
+
+	.btn-close {
+		&:after {
+			line-height: 16px;
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			content: '\D7';
+			left: 50%;
+			margin-left: -8px;
+		}
+	}
+}
+
+.window-content {
+	position: relative;
+	width: 100%;
+	height: auto;
+	display: block;
+	padding: 4px;
+}
+
+.window {
+	&.success {
+		.window-caption {
+			background-color: @green;
+			color: @white;
+		}
+		.block-shadow-success;
+	}
+}
+
+.window {
+	&.error {
+		.window-caption {
+			background-color: @red;
+			color: @white;
+		}
+		.block-shadow-error;
+	}
+}
+
+.window {
+	&.warning {
+		.window-caption {
+			background-color: @orange;
+			color: @white;
+		}
+		.block-shadow-warning;
+	}
+}

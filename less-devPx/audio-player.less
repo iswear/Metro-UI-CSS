@@ -1,0 +1,160 @@
+@import (once) "vars";
+@import (once) "utils";
+
+@audio_inactive_button: darken(@white, 30%);
+@audio_active_button: @white;
+
+.audio-player {
+    display: inline-block;
+    position: relative;
+    background: @dark;
+    height: auto;
+
+    .controls {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 4px;
+        background: inherit;
+        .clear-float;
+
+        .control-element {
+            height: 34px;
+            display: inline-block;
+            border: none;
+            background: rgba(34, 34, 34, 0.5);
+            vertical-align: middle;
+        }
+
+        .stream-wrapper {
+            padding: 0 4px;
+        }
+
+        .stream-slider {
+            width: 200px;
+        }
+
+        .info-box {
+            margin: 0 2px;
+            padding: 12px 16px;
+            color: @white;
+            height: 34px;
+            line-height: 1;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .volume-wrapper {
+            width: 100px;
+            padding: 0 4px 0;
+        }
+
+        .play, .stop, .loop, .volume, .next, .prev, .shuffle, .random, .plist {
+            color: @audio_inactive_button;
+            &:hover, &:active {
+                color: @audio_active_button;
+            }
+       }
+
+        .loop {
+            &.active {
+                color: @lightGreen;
+            }
+        }
+
+        .control-element:disabled {
+            color: @gray;
+        }
+    }
+}
+
+.audio-player {
+
+    .play-list-wrapper {
+        display: block;
+        position: relative;
+        padding: 10px;
+        .clear-float;
+        border-bottom: 1px solid @gray;
+
+        &.not-visible {
+            display: none;
+        }
+    }
+
+    .album-title {
+        font-size: 32px;
+        color: @white;
+        font-weight: lighter;
+        margin: 0 0 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid @gray;
+    }
+
+    .poster {
+        float: left;
+        width: 160px;
+        height: 100%;
+    }
+
+    .album-desc {
+        padding: 10px;
+        color: @grayLighter;
+        font-size: 12px;
+    }
+
+    .play-list {
+        list-style: none;
+        padding: 10px;
+        color: @white;
+        display: block;
+        font-size: 12px;
+        width: 100%;
+
+        li {
+            padding: 2px 16px;
+            cursor: pointer;
+            position: relative;
+
+            &:hover {
+                background: @gray;
+            }
+
+            &.current {
+                color: @cyan;
+                .text-shadow;
+
+                &:before {
+                    content: "\25B6";
+                    position: absolute;
+                    left: 4px;
+                }
+            }
+        }
+    }
+
+    .poster ~ .play-list {
+        margin: 0 0 0 176px;
+        width: ~"calc(100% - 176px)";
+    }
+}
+
+.audio-player {
+    &.micro {
+        .plist, .loop, .next, .prev, .random, .stop, .stream-wrapper, .info-box, .volume-wrapper, .volume {
+            display: none;
+        }
+    }
+
+    &.small {
+        .plist, .stop, .stream-wrapper, .next, .prev, .random, .loop {
+            display: none;
+        }
+    }
+
+    &.medium {
+        .plist, .stop, .next, .prev, .random, .loop {
+            display: none;
+        }
+    }
+}

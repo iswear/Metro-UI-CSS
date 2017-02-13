@@ -1,0 +1,147 @@
+@import (once) "vars";
+@import (once) "typography";
+@import (once) "utils";
+
+.simple-list, .numeric-list {
+	.unstyled-list;
+	counter-reset:li;
+	padding-left:0;
+	margin-left: 10px;
+    color: @textColor;
+
+	li {
+		position:relative;
+		padding: 4px 12px;
+		list-style:none;
+		color: inherit;
+
+		&:before {
+			position: absolute;
+			top: 50%;
+			margin-top: -13px;
+			left: -10px;
+			color: @lightCyan;
+			font-size: 32px;
+			vertical-align: middle;
+            .square(20px);
+            line-height: 20px;
+		}
+	}
+
+	ul {
+		margin: 4px 8px 0;
+	}
+}
+
+.simple-list {
+	& > li:before {
+		content: "\2022";
+	}
+
+	ul li:before {
+		content: "\00B7";
+	}
+}
+
+.numeric-list {
+	& > li {
+		padding: 4px 12px 4px 18px;
+	}
+
+	& > li:before {
+		content:counter(li);
+		counter-increment:li;
+		font-size: 12px;
+		color: @white;
+		background-color: @lightCyan;
+		border-radius: 50%;
+		.align-center;
+		margin-top: -10px;
+	}
+
+	&.square-marker, &.square-bullet {
+		& > li:before {
+			border-radius: 0;
+		}
+	}
+}
+
+.simple-list, .numeric-list {
+    &.large-bullet {
+
+        li {
+
+            margin: 6px 0;
+            padding-left: 32px;
+
+            &:before {
+                line-height: 32px;
+                .square(32px);
+                margin-top: -16px;
+            }
+        }
+    }
+}
+
+.simple-list {
+    &.large-bullet {
+        li {
+            padding-left: 16px;
+            &:before {
+                margin-top: -21px;
+                font-size: 48px;
+                //color: inherit;
+            }
+        }
+    }
+}
+
+.simple-list {
+    &.dark-bullet {li:before {color: @dark;}}
+    &.alert-bullet {li:before {color: @red;}}
+    &.info-bullet {li:before {color: @cyan;}}
+    &.success-bullet {li:before {color: @green;}}
+    &.warning-bullet {li:before {color: @yellow;}}
+    &.red-bullet {li:before {color: @red;}}
+    &.blue-bullet {li:before {color: @cyan;}}
+    &.green-bullet {li:before {color: @green;}}
+    &.yellow-bullet {li:before {color: @yellow;}}
+}
+
+.numeric-list {
+    &.dark-bullet {li:before {background-color: @dark;}}
+    &.alert-bullet {li:before {background-color: @red;}}
+    &.info-bullet {li:before {background-color: @cyan;}}
+    &.success-bullet {li:before {background-color: @green;}}
+    &.warning-bullet {li:before {background-color: @yellow;}}
+    &.red-bullet {li:before {background-color: @red;}}
+    &.blue-bullet {li:before {background-color: @cyan;}}
+    &.green-bullet {li:before {background-color: @green;}}
+    &.yellow-bullet {li:before {background-color: @yellow;}}
+}
+
+.step-list {
+	margin: 0 0 0 32px;
+	padding: 0;
+	list-style-type: none;
+	counter-reset:li;
+
+	& > li {
+		border-left: 1px #ccc solid;
+		position: relative;
+		padding: 0 10px;
+		margin: 10px;
+		vertical-align: top;
+	}
+
+	& > li:before {
+		position: absolute;
+		content:counter(li);
+		counter-increment:li;
+		font-size: 32px;
+		color: @grayLight;
+		left: 0;
+		top: 5px;
+		margin-left: -24px;
+	}
+}

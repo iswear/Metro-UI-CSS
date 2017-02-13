@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet/less" href="../../less-dev/layout.less">
+</head>
+<body>
+<div class="layout" data-role="layout" style="width: 500px; height: 400px;">
+    <div class="north" style="height: 100px; background-color: red"></div>
+    <div class="south" style="height: 100px; background-color: red"></div>
+    <div class="east" style="width: 100px; background-color: red"></div>
+    <div class="west" style="width: 100px; background-color: red"></div>
+    <div class="center" style="background-color: blue"></div>
+    <div class="split" style="z-index: 2; background-color: black;"></div>
+</div>
+
+
+
+<div>********* 这里是分界线 *********</div>
+
+
+<div class="layout" data-role="layout" style="width: 500px; height: 400px;">
+    <div class="north" style="height: 100px; background-color: red"></div>
+    <div class="south" style="height: 100px; background-color: red"></div>
+    <div class="east" style="width: 100px; background-color: red"></div>
+    <div class="west" style="width: 100px; background-color: red"></div>
+    <div class="center" style="background-color: blue"></div>
+    <div class="split" style="z-index: 2; background-color: black;"></div>
+</div>
+
+
+<script src="../../js-dev/jquery-3.1.0.js"></script>
+<script src="../../js-dev/global.js"></script>
+<script src="../../js-dev/requirements.js"></script>
+<script src="../../js-dev/widget.js"></script>
+
+<script src="../../js-dev/utils/core-utils.js"></script>
+<script src="../../js-dev/utils/dom-utils.js"></script>
+<script src="../../js-dev/utils/easing.js"></script>
+<script src="../../js-dev/utils/hotkeys.js"></script>
+<script src="../../js-dev/utils/mousewheel.js"></script>
+<script src="../../js-dev/utils/pre-code.js"></script>
+<script src="../../js-dev/utils/touch-handler.js"></script>
+<script src="../../js-dev/utils/tpl.js"></script>
+
+<script src="../../js-dev/widgets/plugin.js"></script>
+<script src="../../js-dev/widgets/layout.js"></script>
+
+<script src="../../js-dev/initiator.js"></script>
+<script>
+    less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: "../../less-dev"
+    };
+</script>
+<script src="../../js/less.min.js"></script>
+
+<script>
+    $.Metro.init();
+</script>
+
+</body>
+</html>

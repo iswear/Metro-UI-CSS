@@ -1,0 +1,74 @@
+@import "vars";
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.fixed-top, .fixed-bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: @zindexFixedNavbar;
+}
+
+.fixed-top {
+    top: 0;
+    bottom: auto;
+
+}
+
+.fixed-bottom {
+    top: auto;
+    bottom: 0;
+}
+
+
+.pos-abs {position: absolute !important;}
+.pos-rel {position: relative !important;}
+.pos-fix {position: fixed !important;}
+
+.layout {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    > .center {
+        position: absolute;
+    }
+    > .north {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+    }
+    > .east {
+        position: absolute;
+        right: 0;
+    }
+    > .south {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    > .west {
+        position: absolute;
+        left: 0;
+    }
+    > .split {
+        position: absolute;
+        display: none;
+    }
+}
+
+.layout.layout-relative {
+    position: relative;
+}
+
+.layout.layout-absolute {
+    position: absolute;
+}
+
+.layout.layout-fixed {
+    position: fixed;
+}

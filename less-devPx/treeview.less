@@ -1,0 +1,233 @@
+@import (once) "vars";
+@import (once) "utils";
+
+// leaf
+// node
+
+.treeview {
+	margin: 0;
+	padding: 0;
+	display: block;
+	font-size: 12px;
+	position: relative;
+
+	& ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: inherit;
+	}
+
+	& > .move-sign {
+		display: block;
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		border-top: 2px @red solid;
+		//font: normal normal normal 12px metro;
+		//line-height: 16px;
+		//text-align: center;
+		//color: @red;
+        //
+		//&:before {
+		//	content: '\ea3c';
+		//}
+	}
+
+	& .node {
+		padding: 0 16px;
+		font-size: inherit;
+		cursor: pointer;
+		list-style: none;
+
+		& > .node-view {
+			position: relative;
+			display: inline-block;
+			padding: 2px 0;
+			vertical-align: middle;
+			min-width: 100%;
+			color: inherit;
+			.no-user-select;
+
+			& > .node-toggle {
+				position: absolute;
+				left: -16px;
+				top: 50%;
+				width: 16px;
+				height: 16px;
+				margin-top: -8px;
+
+				&:before {
+					position: absolute;
+					display: block;
+					left: 50%;
+					top: 50%;
+					width: 0;
+					height: 0;
+					margin-top: -11px;
+					margin-left: -4px;
+					content: '';
+					border-left: 7px solid transparent;
+					border-top: 7px solid transparent;
+					border-bottom: 7px @cyan solid;
+				}
+			}
+
+			& > .input-control {
+				margin: 0;
+				top: -1px;
+				height: 16px;
+				line-height: 10px;
+				min-height: 0;
+
+				& > .check {
+					line-height: 16px;
+				}
+			}
+
+			& > .node-icon {
+				width: 16px;
+				height: 16px;
+				text-align: center;
+
+				&:hover {
+					color: @dark;
+				}
+			}
+
+			& > .node-text {
+
+			}
+
+			.move-before() {
+				position: absolute;
+				display: block;
+				left: 0;
+				width: 10px;
+				height: 2px;
+				border: none;
+				background-color: @red;
+				margin-top: -1px;
+				margin-left: -14px;
+				content: '';
+				z-index: 100;
+			}
+
+			.move-after() {
+				position: absolute;
+				display: block;
+				left: 0;
+				width: 0;
+				height: 0;
+				border-left: 5px @red solid;
+				border-top: 3px transparent solid;
+				border-bottom: 3px transparent solid;
+				margin-left: -7px;
+				margin-top: -3px;
+				content: '';
+				z-index: 100;
+			}
+
+			&.move-up {
+				&:before {
+					.move-before();
+					top: 0;
+				}
+				&:after {
+					.move-after();
+					top: 0;
+				}
+			}
+
+			&.move-center {
+				&:before {
+					.move-before();
+					top: 50%;
+				}
+				&:after {
+					.move-after();
+					top: 50%;
+				}
+			}
+
+			&.move-down {
+				&:before {
+					.move-before();
+					top: 100%;
+				}
+				&:after {
+					.move-after();
+					top: 100%;
+				}
+			}
+
+			&:hover {
+				& > .node-toggle {
+					&:before {
+						border-bottom-color: @darkCyan;
+					}
+				}
+			}
+		}
+
+		&.leaf {
+			& > .node-view {
+				& > .node-toggle {
+					visibility: hidden;
+				}
+			}
+		}
+
+		&.active {
+			& > .node-view {
+				& > .node-text {
+					font-weight: bold;
+				}
+			}
+		}
+
+		&.disabled {
+			& > .node-view {
+				& > .node-text {
+					cursor: default;
+					color: @grayLight;
+				}
+			}
+
+			&:hover {
+				& > .node-view {
+					& > .node-text {
+						color: @grayLight;
+					}
+				}
+			}
+		}
+
+		&.collapsed {
+			& > .node-view {
+				& > .node-toggle {
+					&:before {
+						margin-top: -10px;
+						margin-left: -8px;
+						.rotate-45;
+						border-bottom-color: @grayLight;
+					}
+				}
+
+				&:hover {
+					& > .node-toggle {
+						&:before {
+							border-bottom-color: @darkCyan;
+						}
+					}
+				}
+			}
+
+			& > ul {
+				display: none;
+			}
+		}
+
+	}
+
+}

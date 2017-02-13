@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div id="dragArea" style="position: absolute; left: 100px; top: 100px; width: 200px; height: 200px; border: solid 1px black;" data-role="draggable" data-drag-element=".head">-->
+    <!--<div style="position: absolute; width: 20px; height: 20px; background-color: red" class="head"></div>-->
+<!--</div>-->
+<div id="1" style="position: absolute; top: 100px; margin-top: 100px; width: 20px; height: 20px; background-color: red" data-role="draggable"></div>
+<script src="../../js-dev/jquery-3.1.0.js"></script>
+<script src="../../js-dev/global.js"></script>
+<script src="../../js-dev/initiator.js"></script>
+<script src="../../js-dev/requirements.js"></script>
+<script src="../../js-dev/widget.js"></script>
+
+<script src="../../js-dev/utils/core-utils.js"></script>
+<script src="../../js-dev/utils/dom-utils.js"></script>
+<script src="../../js-dev/utils/easing.js"></script>
+<script src="../../js-dev/utils/hotkeys.js"></script>
+<script src="../../js-dev/utils/mousewheel.js"></script>
+<script src="../../js-dev/utils/pre-code.js"></script>
+<script src="../../js-dev/utils/touch-handler.js"></script>
+<script src="../../js-dev/utils/tpl.js"></script>
+
+<script src="../../js-dev/widgets/plugin.js"></script>
+<script src="../../js-dev/widgets/draggable.js"></script>
+
+<script>
+    less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: "../../less-dev"
+    };
+</script>
+<script src="../../js/less.min.js"></script>
+<script>
+    $.Metro.init();
+</script>
+<script>
+    $("#1").draggable({
+        onDragMove: function (el, offset) {
+            offset.left = undefined;
+            return true;
+        }
+    });
+
+    console.log($(document.body).css("margin-left"));
+    console.log($(document.body).css("border-left-width"));
+    /*
+    $("#dragArea").on("mousemove", function () {
+        console.log("mousemove test haha");
+    });
+    */
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/reset.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/utils.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/scheme-builder.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/menu.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/fluent-menu.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/appbar.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/buttons.less">
+</head>
+<body>
+
+
+
+<!--<div class="app-bar" data-role="appbar">-->
+
+    <!--<a class="app-bar-element branding">Metro UI CSS</a>-->
+
+    <!--<ul class="app-bar-menu">-->
+        <!--<li><a href="">Home</a></li>-->
+        <!--<li>-->
+            <!--<a href="" class="dropdown-toggle">Products</a>-->
+            <!--<ul class="d-menu" data-role="dropdown">-->
+                <!--<li><a href="">Windows 10</a></li>-->
+                <!--<li><a href="">Spartan</a></li>-->
+                <!--<li><a href="">Outlook</a></li>-->
+                <!--<li><a href="">Office 2015</a></li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li><a href="" class="dropdown-toggle">Other Products</a>-->
+                    <!--<ul class="d-menu" data-role="dropdown">-->
+                        <!--<li><a data-hotkey="alt+3" href="http://microsoft.com" target="_blank" onclick="console.log('hi'); return true;">Internet Explorer 10</a></li>-->
+                        <!--<li><a href="">Skype</a></li>-->
+                        <!--<li><a href="">Surface</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</li>-->
+        <!--<li><a href="">Support</a></li>-->
+        <!--<li><a href="">Help</a></li>-->
+    <!--</ul>-->
+<!--</div>-->
+
+<button class="button">button1</button>
+
+
+
+<!--<h3>Flexible Appbar</h3>-->
+<!--<div class="example" data-text="example">-->
+    <!--Default styled-->
+    <!--<div class="app-bar" data-role="appbar">-->
+
+        <!--<a class="app-bar-element branding">Metro UI CSS</a>-->
+
+        <!--<ul class="app-bar-menu">-->
+            <!--<li><a href="">Home</a></li>-->
+            <!--<li data-flexorder="2"><a href="">Unimportant</a></li>-->
+            <!--<li data-flexorder="1"><a href="">Important</a></li>-->
+            <!--<li>-->
+                <!--<a href="" class="dropdown-toggle">Products</a>-->
+                <!--<ul class="d-menu" data-role="dropdown">-->
+                    <!--<li><a href="">Windows 10</a></li>-->
+                    <!--<li><a href="">Spartan</a></li>-->
+                    <!--<li><a href="">Outlook</a></li>-->
+                    <!--<li><a href="">Office 2015</a></li>-->
+                    <!--<li class="divider"></li>-->
+                    <!--<li><a href="" class="dropdown-toggle">Other Products</a>-->
+                        <!--<ul class="d-menu" data-role="dropdown">-->
+                            <!--<li><a href="">Internet Explorer 10</a></li>-->
+                            <!--<li><a href="">Skype</a></li>-->
+                            <!--<li><a href="">Surface</a></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+        <!--</ul>-->
+        <!--<div class="app-bar-pullbutton automatic"></div>-->
+        <!--<ul class="app-bar-menu place-right" data-flexdirection="reverse">-->
+            <!--<li>-->
+                <!--<div class="input-control text">-->
+                    <!--<input type="text" placeholder="Search...">-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li><a href=""><span class="mif-phone icon"></span>Call</a></li>-->
+            <!--<li><a href=""><span class="mif-cart icon"></span> Cart(0)</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
+
+<script src="../../js-dev/jquery-3.1.0.js"></script>
+<script src="../../js-dev/global.js"></script>
+<script src="../../js-dev/initiator.js"></script>
+<script src="../../js-dev/requirements.js"></script>
+<script src="../../js-dev/widget.js"></script>
+
+<script src="../../js-dev/utils/core-utils.js"></script>
+<script src="../../js-dev/utils/dom-utils.js"></script>
+<script src="../../js-dev/utils/easing.js"></script>
+<script src="../../js-dev/utils/hotkeys.js"></script>
+<script src="../../js-dev/utils/mousewheel.js"></script>
+<script src="../../js-dev/utils/pre-code.js"></script>
+<script src="../../js-dev/utils/touch-handler.js"></script>
+<script src="../../js-dev/utils/tpl.js"></script>
+
+<script src="../../js-dev/widgets/plugin.js"></script>
+<script src="../../js-dev/widgets/dropdown.js"></script>
+<script src="../../js-dev/widgets/appbar.js"></script>
+
+<script>
+    less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: "../../less-dev-px/"
+    };
+</script>
+<script src="../../js/less.min.js"></script>
+<script>
+    $.Metro.init();
+</script>
+
+</body>
+</html>

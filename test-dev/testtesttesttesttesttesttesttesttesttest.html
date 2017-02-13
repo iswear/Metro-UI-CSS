@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            font-size: 62.5%;
+        }
+        .parent {
+            width: 500px;
+            height: 100px;
+            white-space: nowrap;
+            background-color: red;
+            overflow: auto;
+            font-size: 0px;
+            -webkit-text-size-adjust: none;
+        }
+
+        .son {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            background-color: blue;
+            padding: 0;
+            margin: 0;
+        }
+        .bottom {
+            height: 20px;
+            background-color: #0c5317;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>

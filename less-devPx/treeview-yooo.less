@@ -1,0 +1,154 @@
+@import (once) "vars";
+@import (once) "utils";
+
+// leaf
+// node
+
+.treeview {
+	margin: 0;
+	padding: 0;
+	display: block;
+	font-size: 12px;
+
+	& > ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: inherit;
+	}
+
+
+	.node {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		& > .node-view {
+			position: relative;
+			display: inline-block;
+			margin: 0;
+			padding: 1px 2px 1px 16px;
+			min-width: 100%;
+			font-size: inherit;
+			cursor: pointer;
+
+			& > .node-toggle {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 16px;
+				height: 100%;
+				text-align: center;
+
+				&:before {
+					position: absolute;
+					display: block;
+					left: 2px;
+					top: 50%;
+					width: 0;
+					height: 0;
+					margin-top: -11px;
+					content: '';
+					border-left: 7px solid transparent;
+					border-top: 7px solid transparent;
+					border-bottom: 7px @cyan solid;
+				}
+			}
+
+			& > .input-control {
+				position: relative;
+				display: inline-block;
+				width: 16px;
+				height: 0;
+
+			}
+
+
+			& > .node-icon {
+				position: relative;
+				display: inline-block;
+				width: 16px;
+				background-color: red;
+				font-size: inherit;
+
+				&:before {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					width: 16px;
+					height: 16px;
+					margin-top: -8px;
+					margin-left: -8px;
+					font-size: inherit;
+					line-height: 16px;
+					text-align: center;
+					background-color: red;
+				}
+			}
+
+			& > .node-text {
+				font-size: inherit;
+				white-space: nowrap;
+				background-color: red;
+				&:hover {
+					color: @dark;
+				}
+			}
+
+			&:hover > .node-toggle {
+				&:before {
+					border-bottom-color: @darkCyan;
+				}
+			}
+		}
+
+		& > ul {
+			display: block;
+			margin: 0;
+			padding: 0 0 0 16px;
+			list-style: none;
+		}
+
+		&.collapsed {
+			& > .node-view {
+				& > .node-toggle {
+					&:before {
+						margin-left: -2px;
+						margin-top: -10px;
+						.rotate-45;
+					}
+				}
+			}
+
+			& > ul {
+				display: none;
+			}
+		}
+
+		&.active {
+
+			& > .node {
+
+				& > .node-view {
+					background-color: @cyan;
+
+					& > .node-text {
+						font-weight: bold;
+					}
+				}
+
+			}
+		}
+
+		&.disabled {
+
+			& > .node {
+				& > .node-view {
+					background-color: @grayLight;
+				}
+			}
+		}
+
+	}
+
+}

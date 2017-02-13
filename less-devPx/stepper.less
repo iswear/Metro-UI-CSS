@@ -1,0 +1,85 @@
+@import (once) "vars";
+@import (once) "utils";
+
+.stepper {
+    margin: 10px 0;
+    width: 100%;
+    .clear-float;
+
+    & > ul {
+        counter-reset:li;
+        border-top: 1px @dark dotted;
+        position: relative;
+        padding: 0;
+        margin: 30px 0;
+        width: 100%;
+        display: block;
+
+        li {
+            list-style: none;
+            float: left;
+            width: 32px;
+            height: 32px;
+            margin-top: -16px;
+            position: absolute;
+            left: 0;
+            background:#666;
+            cursor: pointer;
+			font-size: 14px;
+
+            &:before {
+                content:counter(li);
+                counter-increment:li;
+                position:absolute;
+                box-sizing:border-box;
+                padding: 5px 10px;
+                color:#fff;
+                font-weight:bold;
+                font-family:"Helvetica Neue", Arial, sans-serif;
+                font-size: 14px;
+                text-align:center;
+            }
+
+            &:hover {
+                background-color: @grayLight;
+            }
+
+            &.current, &.complete {
+                transition: all 0.2s ease;
+            }
+
+            &.current {
+                background-color: @cyan;
+                //.scale(1.5);
+
+                &:hover {
+                    background-color: @lighterBlue;
+                }
+            }
+            &.complete {
+                background-color: @green;
+
+                &:before {
+                }
+
+                &:hover {
+                    background-color: @lightGreen;
+                }
+            }
+        }
+    }
+    &.cycle {
+        li {
+            border-radius: 50%;
+        }
+    }
+    &.diamond {
+        li {
+            .rotate(45deg);
+            &:before {
+                .rotate(-45deg);
+            }
+        }
+
+    }
+}

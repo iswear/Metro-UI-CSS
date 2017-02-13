@@ -1,0 +1,76 @@
+@import (once) "vars";
+@import (once) "utils";
+@import (once) "mixins";
+
+.charm {
+	display: block;
+	position: fixed;
+	z-index: @zindexCharms;
+	background: @dark;
+	color: @grayLighter;
+	padding: 10px;
+    .enableGPU();
+
+    .charm-closer {
+        position: absolute;
+        display: block;
+        padding: 8px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 32px;
+        font-weight: normal;
+        z-index: 3;
+        outline: none;
+        cursor: pointer;
+
+        color: @winFlatSystemButtonRestColor;
+        top: 4px;
+        right: 16px;
+
+        &:after {
+            content: '\D7';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -10px;
+            margin-left: -6px;
+        }
+
+        &:hover {
+            color: @white;
+        }
+
+        &:active {
+            color: @white;
+        }
+    }
+}
+
+.charm {
+	&.right-side {
+		width: auto;
+		right: 0;
+		top: 0;
+        left: auto;
+		bottom: 0;
+	}
+	&.left-side {
+		width: auto;
+		left: 0;
+		top: 0;
+		bottom: 0;
+	}
+	&.top-side {
+		height: auto;
+		left: 0;
+		right: 0;
+		top: 0;
+	}
+	&.bottom-side {
+		height: auto;
+		left: 0;
+		right: 0;
+        top: auto;
+		bottom: 0;
+	}
+}

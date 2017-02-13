@@ -1,0 +1,201 @@
+@import (once) "vars";
+@import (once) "typography";
+@import (once) "utils";
+
+.breadcrumbs {
+	.flush-list;
+	background-color: @white;
+	color: #999;
+	padding: 16px;
+
+	& > li {
+		display: inline-block;
+		color: inherit;
+		margin: 0 16px 0 0;
+		position: relative;
+		vertical-align: middle;
+
+		&:before, &:after {
+			display: block;
+			position: absolute;
+			vertical-align: middle;
+			color: transparent;
+			font-size: 0;
+			content: "";
+			height: 1px;
+			width: 6px;
+			background-color: @dark;
+			top: 50%;
+			left: 100%;
+			margin-left: 8px;
+		}
+
+		&:before {
+			.rotate(45deg);
+			margin-top: -2px;
+		}
+
+		&:after {
+			.rotate(-45deg);
+			margin-top: 2px;
+		}
+
+		& > a {
+			color: inherit;
+			display: inline-block;
+		}
+
+		&:last-child {
+			color: @dark;
+			font-weight: bolder;
+			a {cursor: default;}
+			&:before, &:after {
+				background-color: @transparent;
+			}
+		}
+
+		&:hover {
+			color: @dark;
+		}
+	}
+
+	img, .icon {
+		display: inline-block;
+		height: 16px;
+		width: 16px;
+		font-size: 16px;
+		vertical-align: -15%;
+	}
+
+	&.dark {
+		background-color: #393832;
+
+		& > li {
+			&:hover, &:last-child {
+				color: @white;
+			}
+
+			&:before, &:after {
+				background-color: @white;
+			}
+		}
+	}
+}
+
+
+.breadcrumbs2 {
+    margin: 10px 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+
+    li {
+        float: left;
+        margin: 0 3px 0 16px;
+    }
+
+    a {
+        background: @inputRestState;
+        padding: 5px 16px;
+        float: left;
+        text-decoration: none;
+        color: @linkColor;
+        position: relative;
+
+        &:hover {
+            background: @cyan;
+            color: @white;
+
+            &:before {
+                border-color: @cyan @cyan @cyan transparent;
+            }
+
+            &:after {
+                border-left-color: @cyan;
+            }
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            margin-top: -24px;
+            border-width: 24px 0 24px 16px;
+            border-style: solid;
+            border-color: @inputRestState @inputRestState @inputRestState transparent;
+            left: -16px;
+            margin-left: 1px;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            margin-top: -24px;
+            border-top: 24px solid transparent;
+            border-bottom: 24px solid transparent;
+            border-left: 16px solid @inputRestState;
+            right: -16px;
+            margin-right: 1px;
+        }
+    }
+
+    & > li:first-child {
+        margin-left: 0;
+        a:before {
+            content: normal;
+        }
+    }
+
+    & > li:last-child {
+        background: none;
+        a {
+            color: @dark;
+        }
+        &:after, &:before {
+            content: normal;
+        }
+        &:hover {
+            a {
+                color: @white;
+            }
+        }
+    }
+
+    .active, .active:hover {
+        background: none;
+        a {
+            color: @dark;
+        }
+    }
+
+    .active:hover {
+        a {
+            color: @white;
+        }
+    }
+
+    .active {
+        &:after, &:before {
+            content: normal;
+        }
+    }
+
+    &.small {
+        a {
+            padding: 3px 16px;
+            font-size: 12px;
+        }
+    }
+    &.mini {
+        a {
+            padding: 2px 16px;
+            font-size: 12px;
+        }
+    }
+
+    & > li > a > [class*=mif] {
+        vertical-align: -10%;
+    }
+}

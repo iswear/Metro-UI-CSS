@@ -1,0 +1,106 @@
+
+@timePointColor: #000;
+@keyFrameColor: #0f0;
+@tweenColor: #00f;
+@timeRuleBKColor: #00f;
+@timeLineBKColor: #0ff;
+
+.time-axis {
+
+    > .time-rule {
+        position: relative;
+        display: block;
+        min-width: 100%;
+        background-color: @timeRuleBKColor;
+
+        > .time-point {
+            float: left;
+            width: 1px;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background-color: @timePointColor;
+        }
+
+        > .time-tip {
+            position: absolute;
+            bottom: 0;
+            font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        > .time-point-short {
+            height: 25%;
+        }
+
+        > .time-point-middle {
+            height: 50%;
+        }
+
+        > .time-point-long {
+            height: 75%;
+        }
+    }
+
+    > .time-line {
+        position: relative;
+        display: block;
+        min-width: 100%;
+        background-color: @timeLineBKColor;
+
+        > .time-point {
+            float: left;
+            width: 1px;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background-color: @timePointColor;
+        }
+
+        > .key-frame {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            background-color: @keyFrameColor;
+        }
+
+        > .tween {
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background-color: @tweenColor;
+
+            > .from {
+                position: absolute;
+                left: 0;
+                top: -2px;
+                width: 2px;
+                height: 6px;
+                display: block;
+                padding: 0;
+                margin: 0;
+                border: none;
+                background-color: @tweenColor;
+            }
+
+            > .to {
+                position: absolute;
+                right: 0;
+                top: -2px;
+                width: 0;
+                height: 0;
+                display: block;
+                padding: 0;
+                margin: 0;
+                border-top: solid 3px transparent;
+                border-right: none;
+                border-bottom: solid 3px transparent;
+                border-left: solid 7px @tweenColor;
+            }
+        }
+    }
+}

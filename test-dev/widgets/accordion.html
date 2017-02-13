@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/reset.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/accordion.less">
+</head>
+<body>
+
+<h5>.accordion</h5>
+<div class="accordion" data-role="accordion" data-close-any="true" style="height: 300px;">
+    <div class="frame">
+        <div class="heading">
+            <div class="icon"></div>
+            选项1
+
+        </div>
+        <div class="content">
+            Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut.
+        </div>
+    </div>
+    <div class="frame active">
+        <div class="heading">Item 2</div>
+        <div class="content">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute.
+        </div>
+    </div>
+    <div class="frame">
+        <div class="heading">Item 3</div>
+        <div class="content">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        </div>
+    </div>
+</div>
+
+
+<script src="../../js-dev/jquery-3.1.0.js"></script>
+<script src="../../js-dev/global.js"></script>
+<script src="../../js-dev/initiator.js"></script>
+<script src="../../js-dev/requirements.js"></script>
+<script src="../../js-dev/widget.js"></script>
+
+<script src="../../js-dev/utils/core-utils.js"></script>
+<script src="../../js-dev/utils/dom-utils.js"></script>
+<script src="../../js-dev/utils/easing.js"></script>
+<script src="../../js-dev/utils/hotkeys.js"></script>
+<script src="../../js-dev/utils/mousewheel.js"></script>
+<script src="../../js-dev/utils/pre-code.js"></script>
+<script src="../../js-dev/utils/touch-handler.js"></script>
+<script src="../../js-dev/utils/tpl.js"></script>
+
+<script src="../../js-dev/widgets/plugin.js"></script>
+<script src="../../js-dev/widgets/accordion.js"></script>
+
+<script>
+    less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: "../../less-dev"
+    };
+</script>
+<script src="../../js/less.min.js"></script>
+
+<script>
+    $.Metro.init();
+</script>
+
+</body>
+</html>

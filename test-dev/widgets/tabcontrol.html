@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="../../docs/css/metro-icons.css">
+    <!--<link type="text/css" rel="stylesheet/less" href="../../less-devPx/metro-icons.less">-->
+    <!--<link type="text/css" rel="stylesheet/less" href="../../less-devPx/metro-icons-mixins.less">-->
+    <!--<link type="text/css" rel="stylesheet/less" href="../../less-devPx/metro-icons-animation.less">-->
+    <!--<link type="text/css" rel="stylesheet/less" href="../../less-devPx/metro-icons-content.less">-->
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/fonts.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/reset.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/utils.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/scheme-builder.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/menu.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/fluent-menu.less">
+    <link type="text/css" rel="stylesheet/less" href="../../less-devPx/tabcontrol.less">
+</head>
+<body>
+<div id="ID_tabControl" class="tabcontrol" data-role="tabcontrol">
+    <ul class="tabs">
+        <span class="list-btn"></span>
+        <li data-id="1"><a>Tab 1Tab 1Tab 1Tab 1Tab 1Tab 1Tab 1Tab 1Tab 1Tab 1Tab 1</a><span class="close-btn"></span></li>
+        <li data-id="2"><a>Tab 2</a><span class="close-btn"></span></li>
+        <li data-id="3"><a>Tab 3</a><span class="close-btn"></span></li>
+        <li data-id="4"><a>Tab 4</a><span class="close-btn"></span></li>
+        <li data-id="5"><a>Tab 5</a><span class="close-btn"></span></li>
+        <li data-id="6"><a>Tab 6</a><span class="close-btn"></span></li>
+        <li data-id="7"><a>Tab 7</a><span class="close-btn"></span></li>
+        <li data-id="8"><a>Tab 8</a><span class="close-btn"></span></li>
+        <li data-id="9"><a>Tab 9</a><span class="close-btn"></span></li>
+    </ul>
+    <div class="frames">
+        <div data-id="1">1</div>
+        <div data-id="2">2</div>
+        <div data-id="3">3</div>
+        <div data-id="4">4</div>
+        <div data-id="5">5</div>
+        <div data-id="6">6</div>
+        <div data-id="7">7</div>
+        <div data-id="8">8</div>
+        <div data-id="9">9</div>
+    </div>
+</div>
+
+<!--<h5>.tabcontrol & .tabs-bottom</h5>-->
+<!--<div class="tabcontrol tabs-bottom" data-role="tabcontrol">-->
+    <!--<div class="frames bg-grayLight">-->
+        <!--<div class="frame" id="frame_2_1">1</div>-->
+        <!--<div class="frame" id="frame_2_2">2</div>-->
+    <!--</div>-->
+    <!--<ul class="tabs tab-bottom">-->
+        <!--<li class="active"><a href="#frame_2_1">Tab 1</a></li>-->
+        <!--<li><a href="#frame_2_2">Tab 2</a></li>-->
+        <!--<li class="disabled"><a href="">Tab 3</a></li>-->
+    <!--</ul>-->
+<!--</div>-->
+
+
+<script src="../../js-dev/jquery-3.1.0.js"></script>
+<script src="../../js-dev/global.js"></script>
+<script src="../../js-dev/initiator.js"></script>
+<script src="../../js-dev/requirements.js"></script>
+<script src="../../js-dev/widget.js"></script>
+
+<script src="../../js-dev/utils/core-utils.js"></script>
+<script src="../../js-dev/utils/dom-utils.js"></script>
+<script src="../../js-dev/utils/easing.js"></script>
+<script src="../../js-dev/utils/hotkeys.js"></script>
+<script src="../../js-dev/utils/mousewheel.js"></script>
+<script src="../../js-dev/utils/pre-code.js"></script>
+<script src="../../js-dev/utils/touch-handler.js"></script>
+<script src="../../js-dev/utils/tpl.js"></script>
+
+<script src="../../js-dev/widgets/plugin.js"></script>
+<script src="../../js-dev/widgets/draggable.js"></script>
+<script src="../../js-dev/widgets/dropdown.js"></script>
+<script src="../../js-dev/widgets/tabcontrol.js"></script>
+
+<script>
+    less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: "../../less-dev"
+    };
+</script>
+<script src="../../js/less.min.js"></script>
+
+<script>
+    $.Metro.init();
+</script>
+
+</body>
+</html>
